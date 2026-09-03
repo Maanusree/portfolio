@@ -1,0 +1,2 @@
+# Minimal requirements for Python static server on Render
+gunicorn>=21.2.0

@@ -6,9 +6,10 @@
   <title>Maanusree S — Full-Stack &amp; Java Developer Portfolio</title>
   <meta name="description" content="Portfolio of Maanusree S — B.Tech IT (9.37 CGPA), NPTEL Gold Medalist, Full-Stack &amp; Java Developer." />
 
-  <!-- Favicon -->
+  <!-- Favicon (Transparent Globe Badge) -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="alternate icon" href="assets/profile.jpg" />
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
 
   <!-- Google Fonts: Outfit & Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -796,7 +797,13 @@
               <h3>Send a Message</h3>
             </div>
 
-            <form id="contact-form" class="figma-form">
+            <form id="contact-form" class="figma-form" action="https://formsubmit.co/maanusree1105@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_subject" value="New Portfolio Message for Maanusree!" />
+
+              <div id="form-status" class="form-status-box" style="display:none;"></div>
+
               <div class="form-group">
                 <label for="contact-name">Your Name</label>
                 <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Smith" required />
@@ -817,9 +824,9 @@
                 <textarea id="contact-message" name="message" rows="4" placeholder="Hi Maanusree, I saw your portfolio and would like to discuss..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-gradient-teal btn-full">
-                <span>Send Message</span>
-                <i class="fa-solid fa-paper-plane"></i>
+              <button type="submit" id="contact-submit-btn" class="btn btn-gradient-teal btn-full">
+                <span id="submit-btn-text">Send Message</span>
+                <i class="fa-solid fa-paper-plane" id="submit-btn-icon"></i>
               </button>
             </form>
           </div>

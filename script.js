@@ -256,25 +256,92 @@ function showToast(message, type = 'info') {
 }
 
 /* ==========================================================
-   6. Contact Form Interactive Handler
+   6. Contact Form Interactive Handler (Live Real-Time Email Delivery)
    ========================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
+  const statusBox = document.getElementById('form-status');
+  const submitBtn = document.getElementById('contact-submit-btn');
+  const btnText = document.getElementById('submit-btn-text');
+  const btnIcon = document.getElementById('submit-btn-icon');
+
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const name = document.getElementById('contact-name').value;
-    const email = document.getElementById('contact-email').value;
-    const subject = document.getElementById('contact-subject').value || 'Portfolio Inquiry';
-    const message = document.getElementById('contact-message').value;
 
-    // Trigger user mailto client
-    const mailtoUrl = `mailto:maanusree1105@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
-    window.open(mailtoUrl, '_blank');
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value.trim() || 'Portfolio Inquiry';
+    const message = document.getElementById('contact-message').value.trim();
 
-    showToast('Opening email client to send your message to Maanusree...', 'success');
-    form.reset();
+    if (!name || !email || !message) {
+      showToast('Please fill out all required fields.', 'error');
+      return;
+    }
+
+    // UI Loading state
+    if (submitBtn) submitBtn.disabled = true;
+    if (btnText) btnText.textContent = 'Sending Message...';
+    if (btnIcon) btnIcon.className = 'fa-solid fa-spinner fa-spin';
+
+    if (statusBox) {
+      statusBox.style.display = 'none';
+      statusBox.className = 'form-status-box';
+    }
+
+    const payload = {
+      name: name,
+      email: email,
+      _subject: `New Portfolio Message from ${name}: ${subject}`,
+      subject: subject,
+      message: message,
+      _template: 'table',
+      _captcha: 'false'
+    };
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/maanusree1105@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+
+      if (response.ok && (data.success === 'true' || data.success === true || response.status === 200)) {
+        if (statusBox) {
+          statusBox.style.display = 'flex';
+          statusBox.className = 'form-status-box status-success';
+          statusBox.innerHTML = `<i class="fa-solid fa-circle-check" style="font-size:1.4rem;"></i> <div><strong>Message Sent Successfully!</strong><br>Thank you for reaching out, Maanusree has received your message and will reply to <em>${email}</em> shortly.</div>`;
+        }
+        showToast('Message delivered directly to Maanusree\'s inbox!', 'success');
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.warn('FormSubmit AJAX fallback triggered:', err);
+      
+      // Fallback: Open mailto link so the user message is NEVER lost
+      const mailtoUrl = `mailto:maanusree1105@gmail.com?subject=${encodeURIComponent(subject + ' - from ' + name)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+      
+      if (statusBox) {
+        statusBox.style.display = 'flex';
+        statusBox.className = 'form-status-box status-success';
+        statusBox.innerHTML = `<i class="fa-solid fa-paper-plane" style="font-size:1.4rem;"></i> <div>Opening your email app to send your message to <strong>maanusree1105@gmail.com</strong>...<br><a href="${mailtoUrl}" target="_blank" style="color:#2dd4bf; text-decoration:underline; font-weight:700;">Click here if your mail app didn't open automatically</a>.</div>`;
+      }
+      
+      window.open(mailtoUrl, '_blank');
+      showToast('Opening email client...', 'info');
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+      if (btnText) btnText.textContent = 'Send Message';
+      if (btnIcon) btnIcon.className = 'fa-solid fa-paper-plane';
+    }
   });
 }
 
