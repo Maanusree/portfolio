@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Rounded Square Background -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="url(#tealGrad)" stroke-width="2.5"/>
+  
+  <!-- Code Brackets / Modern Developer 'MS' Monogram -->
+  <path d="M 16 24 L 10 32 L 16 40" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <path d="M 48 24 L 54 32 L 48 40" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  
+  <!-- Center 'M' Letter -->
+  <text x="32" y="39" font-family="'Outfit', 'Inter', system-ui, sans-serif" font-size="22" font-weight="900" fill="url(#tealGrad)" text-anchor="middle" letter-spacing="-0.5" filter="url(#glow)">M</text>
+  
+  <!-- Subtle glowing dot -->
+  <circle cx="43" cy="22" r="2.5" fill="#2dd4bf"/>
+</svg>

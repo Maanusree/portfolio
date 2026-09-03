@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maanusree S — Full-Stack &amp; Java Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Maanusree S — B.Tech IT (9.37 CGPA), NPTEL Gold Medalist, Full-Stack &amp; Java Developer." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="alternate icon" href="assets/profile.jpg" />
+
+  <!-- Google Fonts: Outfit & Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+
+  <!-- Ambient Bluish-Green Glowing Orbs & Interactive Particle Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+  <div class="bg-glow orb-teal-top"></div>
+  <div class="bg-glow orb-cyan-mid"></div>
+  <div class="bg-glow orb-emerald-bottom"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Navigation Bar -->
+  <header class="header-nav" id="header-nav">
+    <div class="container nav-content">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-avatar-box">
+          <img src="assets/profile.jpg" alt="Maanusree S" class="nav-avatar" onerror="this.style.display='none'; document.getElementById('nav-fallback-avatar').style.display='flex';" />
+          <div id="nav-fallback-avatar" class="nav-avatar-fallback" style="display:none;">MS</div>
+        </div>
+        <span class="brand-text">Maanusree<span class="dot-accent">.</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Tech Stack</a>
+        <a href="#timeline" class="nav-link">Timeline</a>
+        <a href="#achievements" class="nav-link">Honors</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="open-resume-btn" class="btn btn-outline-teal btn-sm">
+          <i class="fa-regular fa-file-lines"></i> Resume
+        </button>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================== -->
+    <!-- HERO SECTION (Figma Style with Bluish-Green)  -->
+    <!-- ============================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        
+        <div class="hero-badge-row">
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span>Available for SDE &amp; Full-Stack Roles • 2026 Batch</span>
+          </div>
+        </div>
+
+        <!-- 3D Character Animated Big Name -->
+        <h1 class="hero-name-title" id="hero-name-letters">
+          <!-- Dynamically populated letters with 3D hover in JS -->
+          <span class="letter-char">M</span><span class="letter-char">A</span><span class="letter-char">A</span><span class="letter-char">N</span><span class="letter-char">U</span><span class="letter-char">S</span><span class="letter-char">R</span><span class="letter-char">E</span><span class="letter-char">E</span>
+          <span class="letter-space">&nbsp;</span>
+          <span class="letter-char">S</span>
+        </h1>
+
+        <div class="hero-subheading">
+          Welcome to My Portfolio
+        </div>
+
+        <p class="hero-tagline">
+          Exploring Full-Stack Web Development, Java Systems &amp; AI Engineering
+        </p>
+
+        <!-- Floating Orbiting Tech Icons (Figma Style) -->
+        <div class="hero-floating-icons">
+          <div class="float-icon-pill" title="Java &amp; Spring Boot">
+            <i class="fa-brands fa-java"></i>
+          </div>
+          <div class="float-icon-pill" title="Next.js &amp; React">
+            <i class="fa-brands fa-react"></i>
+          </div>
+          <div class="float-icon-pill" title="MySQL &amp; Databases">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="float-icon-pill" title="AI &amp; Voice Intelligence">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="float-icon-pill" title="Academic Best Outgoing Student">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+        </div>
+
+        <div class="hero-meta-block">
+          <div class="hero-role-title">Software Engineer &amp; Full-Stack Developer</div>
+          <div class="hero-role-pills">
+            Building Scalable Web Apps &bull; Next.js &bull; Spring Boot &bull; REST APIs &bull; MySQL
+          </div>
+        </div>
+
+        <div class="hero-cta-buttons">
+          <a href="#projects" class="btn btn-gradient-teal">
+            <span>Explore Projects</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline-teal">
+            <span>Let's Connect</span>
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-teal" title="GitHub">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/manusree-4305a4314" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-teal" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ABOUT ME SECTION (Figma Circular Avatar + Orbits) -->
+    <!-- ============================================== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-title-box">
+          <h2 class="section-title-gradient">About Me</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="about-grid-layout">
+          <!-- Left: Circular Photo with Rotating Orbital Dashed Ring -->
+          <div class="about-avatar-col">
+            <div class="avatar-orbit-wrapper">
+              <div class="avatar-circle-glow">
+                <img src="assets/profile.jpg" alt="Maanusree S" class="about-photo-img" onerror="this.style.display='none'; document.getElementById('about-fallback-avatar').style.display='flex';" />
+                <div id="about-fallback-avatar" class="about-avatar-fallback" style="display:none;">MS</div>
+              </div>
+              <div class="orbit-ring-dashed"></div>
+              <div class="orbit-ring-solid"></div>
+              <div class="orbit-badge"><i class="fa-solid fa-code"></i></div>
+            </div>
+          </div>
+
+          <!-- Right: Bio Content -->
+          <div class="about-text-col">
+            <h3 class="about-headline">
+              Software Engineer passionate about building scalable, intelligent systems
+            </h3>
+
+            <p class="about-body-text">
+              I am an Information Technology undergraduate at <strong>Sethu Institute of Technology (9.37 CGPA)</strong> and an <strong>NPTEL Gold Medalist (90%)</strong>. I specialize in designing and deploying full-stack web applications with modern architectures like Next.js, React, Java &amp; Spring Boot.
+            </p>
+
+            <p class="about-body-text">
+              With experience as a <strong>Java Developer Intern at CodeTech</strong>, I developed strong engineering discipline in object-oriented design, RESTful API integrations, and database modeling. I take pride in creating clean, reliable software that delivers intuitive user experiences.
+            </p>
+
+            <!-- 3 Attribute Badges -->
+            <div class="about-traits-row">
+              <div class="trait-badge">
+                <i class="fa-solid fa-code trait-icon"></i>
+                <span>Fluent in Java &amp; Algorithms</span>
+              </div>
+              <div class="trait-badge">
+                <i class="fa-solid fa-graduation-cap trait-icon"></i>
+                <span>9.37 CGPA Academic Excellence</span>
+              </div>
+              <div class="trait-badge">
+                <i class="fa-solid fa-rocket trait-icon"></i>
+                <span>Passionate about Full-Stack &amp; AI</span>
+              </div>
+            </div>
+
+            <!-- Quote Box in Bluish-Green Gradient Border -->
+            <div class="about-quote-box">
+              <p class="quote-text">
+                "Engineering the future with clean code, robust backend architectures, and modern web applications."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- FEATURED PROJECTS SECTION                      -->
+    <!-- ============================================== -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-title-box">
+          <h2 class="section-title-gradient">Featured Projects</h2>
+          <p class="section-subtitle">Interactive gallery showcasing full-stack web applications, AI tools, and deployed platforms.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="project-filter-row">
+          <button class="filter-chip active" data-filter="all">All Projects</button>
+          <button class="filter-chip" data-filter="live">Live Deployed</button>
+          <button class="filter-chip" data-filter="fullstack">Full-Stack &amp; AI</button>
+          <button class="filter-chip" data-filter="java">Java &amp; Backend</button>
+        </div>
+
+        <div class="projects-card-grid">
+
+          <!-- PROJECT 1: Support Ticket Management System (Live on Vercel) -->
+          <div class="figma-project-card" data-category="live fullstack">
+            <div class="card-glow-overlay"></div>
+            <div class="card-top-meta">
+              <div class="status-chip live-chip">
+                <span class="pulse-dot"></span> Live on Vercel
+              </div>
+              <div class="card-header-icons">
+                <a href="https://support-ticket-management-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-icon-btn" title="Open Live App">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="card-icon-btn" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="project-year-tag">2026 &bull; Web App</span>
+              <h3 class="card-project-title">
+                <a href="https://support-ticket-management-tau.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Support Ticket Management System
+                </a>
+              </h3>
+              <p class="card-project-desc">
+                A full-stack role-based support ticket lifecycle system built with Next.js and React. Enables seamless issue triage, agent dispatch, priority management, and SLA tracking across customer and admin portals.
+              </p>
+
+              <div class="card-key-points">
+                <div class="key-point"><i class="fa-solid fa-check"></i> Multi-Role Authentication (Admin, Support Agent, Customer).</div>
+                <div class="key-point"><i class="fa-solid fa-check"></i> Live Ticket Lifecycle (Open, In Progress, Resolved).</div>
+                <div class="key-point"><i class="fa-solid fa-check"></i> Built-in demo credential switcher for instant testing.</div>
+              </div>
+
+              <div class="card-tech-tags">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Role Auth</span>
+                <span class="tech-tag">Vercel</span>
+              </div>
+
+              <div class="card-actions">
+                <a href="https://support-ticket-management-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-gradient-teal btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                </a>
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="btn btn-outline-teal btn-sm">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: InnoAssist AI Voice Assistant (Live on Render) -->
+          <div class="figma-project-card" data-category="live fullstack">
+            <div class="card-glow-overlay"></div>
+            <div class="card-top-meta">
+              <div class="status-chip render-chip">
+                <span class="pulse-dot"></span> Live on Render
+              </div>
+              <div class="card-header-icons">
+                <a href="https://innoassist-ai-voice.onrender.com" target="_blank" rel="noopener noreferrer" class="card-icon-btn" title="Open Live App">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="card-icon-btn" title="GitHub Repository">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="project-year-tag">2026 &bull; AI Voice Assistant</span>
+              <h3 class="card-project-title">
+                <a href="https://innoassist-ai-voice.onrender.com" target="_blank" rel="noopener noreferrer">
+                  InnoAssist AI Voice Assistant
+                </a>
+              </h3>
+              <p class="card-project-desc">
+                An interactive AI-powered voice assistant platform that processes real-time voice inputs, synthesizes conversational voice responses, and automates intelligent customer assistance workflows.
+              </p>
+
+              <div class="card-key-points">
+                <div class="key-point"><i class="fa-solid fa-check"></i> Real-time speech recognition &amp; audio streaming.</div>
+                <div class="key-point"><i class="fa-solid fa-check"></i> Intent parsing and low-latency automated response generation.</div>
+                <div class="key-point"><i class="fa-solid fa-check"></i> Containerized cloud deployment on Render.</div>
+              </div>
+
+              <div class="card-tech-tags">
+                <span class="tech-tag">AI Voice API</span>
+                <span class="tech-tag">Speech Recognition</span>
+                <span class="tech-tag">JavaScript / Web Audio</span>
+                <span class="tech-tag">REST API</span>
+                <span class="tech-tag">Render Cloud</span>
+              </div>
+
+              <div class="card-actions">
+                <a href="https://innoassist-ai-voice.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-gradient-teal btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live App
+                </a>
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="btn btn-outline-teal btn-sm">
+                  <i class="fa-brands fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: Chatbot for Civil Law -->
+          <div class="figma-project-card" data-category="java fullstack">
+            <div class="card-glow-overlay"></div>
+            <div class="card-top-meta">
+              <div class="status-chip normal-chip">
+                <i class="fa-solid fa-scale-balanced"></i> Research &amp; Backend
+              </div>
+              <div class="card-header-icons">
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="card-icon-btn" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="project-year-tag">2024 - 2025 &bull; AISTHETICA 2K23</span>
+              <h3 class="card-project-title">
+                Chatbot for Civil Law
+              </h3>
+              <p class="card-project-desc">
+                A web-based conversational legal assistant dynamically retrieving civil law statutes, procedures, and legal information using Google Custom Search API and Spring Boot REST backend.
+              </p>
+
+              <div class="card-key-points">
+                <div class="key-point"><i class="fa-solid fa-check"></i> Spring Boot REST endpoints processing real-time search queries.</div>
+                <div class="key-point"><i class="fa-solid fa-check"></i> Presented at National Level Symposium (AISTHETICA 2K23).</div>
+              </div>
+
+              <div class="card-tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">Google Custom Search API</span>
+                <span class="tech-tag">REST API</span>
+                <span class="tech-tag">Postman</span>
+              </div>
+
+              <div class="card-actions">
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="btn btn-outline-teal btn-sm">
+                  <i class="fa-brands fa-github"></i> View Repository
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: Personal Expense Tracker -->
+          <div class="figma-project-card" data-category="java">
+            <div class="card-glow-overlay"></div>
+            <div class="card-top-meta">
+              <div class="status-chip normal-chip">
+                <i class="fa-solid fa-wallet"></i> CodeTech Internship
+              </div>
+              <div class="card-header-icons">
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="card-icon-btn" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="project-year-tag">Aug - Sep 2025 &bull; Core Java</span>
+              <h3 class="card-project-title">
+                Personal Expense Tracker Application
+              </h3>
+              <p class="card-project-desc">
+                An Object-Oriented Java financial management application to record, categorize (Food, Travel, Shopping, Bills), calculate, and summarize daily and monthly expenses.
+              </p>
+
+              <div class="card-key-points">
+                <div class="key-point"><i class="fa-solid fa-check"></i> Applied OOP principles: encapsulation, modular classes, and input validation.</div>
+                <div class="key-point"><i class="fa-solid fa-check"></i> Developed during internship tenure at CodeTech.</div>
+              </div>
+
+              <div class="card-tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">OOP Architecture</span>
+                <span class="tech-tag">Data Structures</span>
+                <span class="tech-tag">IntelliJ IDEA</span>
+              </div>
+
+              <div class="card-actions">
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="btn btn-outline-teal btn-sm">
+                  <i class="fa-brands fa-github"></i> View Repository
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: Responsive E-Commerce Platform -->
+          <div class="figma-project-card" data-category="frontend">
+            <div class="card-glow-overlay"></div>
+            <div class="card-top-meta">
+              <div class="status-chip normal-chip">
+                <i class="fa-solid fa-bag-shopping"></i> Frontend Web
+              </div>
+              <div class="card-header-icons">
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="card-icon-btn" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <span class="project-year-tag">Frontend Development</span>
+              <h3 class="card-project-title">
+                Responsive E-Commerce Platform
+              </h3>
+              <p class="card-project-desc">
+                An adaptable, modern e-commerce storefront delivering seamless shopping experiences across desktop, tablet, and mobile with structured product listings and interactive cart.
+              </p>
+
+              <div class="card-tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3 (Grid &amp; Flexbox)</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Media Queries</span>
+              </div>
+
+              <div class="card-actions">
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="btn btn-outline-teal btn-sm">
+                  <i class="fa-brands fa-github"></i> View Repository
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TECH STACK SECTION (Figma Glowing Progress Bars) -->
+    <!-- ============================================== -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-title-box">
+          <h2 class="section-title-gradient">Tech Stack</h2>
+          <p class="section-subtitle">Technologies, frameworks, and developer tools I use to build intelligent systems.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="tech-stack-grid">
+          <!-- Card 1: Java & Backend -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <i class="fa-brands fa-java tech-card-icon"></i>
+              <h3>Java &amp; Backend Systems</h3>
+            </div>
+            
+            <div class="skill-meter-list">
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>Java (Core &amp; Advanced)</span>
+                  <span class="meter-val">Expert</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>Spring Boot &amp; REST APIs</span>
+                  <span class="meter-val">Advanced</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 88%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>Object-Oriented Programming (OOP)</span>
+                  <span class="meter-val">Expert</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>Data Structures &amp; Collections</span>
+                  <span class="meter-val">Proficient</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 85%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Web & Frontend -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <i class="fa-brands fa-react tech-card-icon"></i>
+              <h3>Web &amp; Frontend</h3>
+            </div>
+            
+            <div class="skill-meter-list">
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>Next.js &amp; React</span>
+                  <span class="meter-val">Advanced</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>HTML5 &amp; Modern Semantic Web</span>
+                  <span class="meter-val">Expert</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 95%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>CSS3 / Tailwind CSS / Media Queries</span>
+                  <span class="meter-val">Advanced</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>JavaScript (ES6+) &amp; DOM Manipulation</span>
+                  <span class="meter-val">Advanced</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 88%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Databases & Architecture -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <i class="fa-solid fa-database tech-card-icon"></i>
+              <h3>Databases &amp; Cloud</h3>
+            </div>
+            
+            <div class="skill-meter-list">
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>MySQL &amp; Relational Databases</span>
+                  <span class="meter-val">Advanced</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>SQL Queries, Joins &amp; Schema Design</span>
+                  <span class="meter-val">Advanced</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 88%;"></div></div>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span>Vercel &amp; Render Cloud Deployment</span>
+                  <span class="meter-val">Proficient</span>
+                </div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 85%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Tools & Environments -->
+          <div class="tech-card">
+            <div class="tech-card-header">
+              <i class="fa-solid fa-toolbox tech-card-icon"></i>
+              <h3>Tools &amp; Environments</h3>
+            </div>
+            
+            <div class="tech-tools-pill-group">
+              <div class="tool-tag"><i class="fa-brands fa-github"></i> Git &amp; GitHub</div>
+              <div class="tool-tag"><i class="fa-solid fa-code"></i> VS Code</div>
+              <div class="tool-tag"><i class="fa-solid fa-terminal"></i> IntelliJ IDEA</div>
+              <div class="tool-tag"><i class="fa-solid fa-cubes"></i> Eclipse IDE</div>
+              <div class="tool-tag"><i class="fa-solid fa-paper-plane"></i> Postman API</div>
+              <div class="tool-tag"><i class="fa-brands fa-google"></i> Google API</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- EXPERIENCE & EDUCATION TIMELINE (Figma Centered) -->
+    <!-- ============================================== -->
+    <section id="timeline" class="section timeline-section">
+      <div class="container">
+        <div class="section-title-box">
+          <h2 class="section-title-gradient">Experience &amp; Education Timeline</h2>
+          <p class="section-subtitle">My journey in engineering, software development, and academic excellence.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="figma-timeline-container">
+          <div class="timeline-center-line"></div>
+
+          <!-- Timeline 1: CodeTech Internship -->
+          <div class="timeline-row timeline-left">
+            <div class="timeline-bullet-dot"></div>
+            <div class="timeline-content-card">
+              <div class="t-badge"><i class="fa-solid fa-briefcase"></i> Internship &bull; Aug - Sep 2025</div>
+              <h3 class="t-title">Java Developer Intern</h3>
+              <h4 class="t-org">CodeTech</h4>
+              <p class="t-desc">
+                Architected and developed the <strong>Personal Expense Tracker</strong> application in Java utilizing OOP principles, scanner validations, and modular category aggregators.
+              </p>
+              <div class="t-tags">
+                <span>Java</span>
+                <span>OOP</span>
+                <span>IntelliJ IDEA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 2: B.Tech Degree (Sethu IT) -->
+          <div class="timeline-row timeline-right">
+            <div class="timeline-bullet-dot"></div>
+            <div class="timeline-content-card highlight-card">
+              <div class="t-badge gold-t-badge"><i class="fa-solid fa-graduation-cap"></i> 2022 - 2026 (Present)</div>
+              <h3 class="t-title">B.Tech in Information Technology</h3>
+              <h4 class="t-org">Sethu Institute of Technology</h4>
+              <div class="cgpa-pill"><i class="fa-solid fa-star"></i> 9.37 CGPA (upto 6th Sem)</div>
+              <p class="t-desc">
+                Ranked top of the department. Awarded Certificate of <strong>Academic Best Outgoing Student</strong> (2022-2026). Specialization in Software Engineering, Java, DBMS, and Web Systems.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline 3: H.S.C. -->
+          <div class="timeline-row timeline-left">
+            <div class="timeline-bullet-dot"></div>
+            <div class="timeline-content-card">
+              <div class="t-badge"><i class="fa-solid fa-school"></i> 2022</div>
+              <h3 class="t-title">Higher Secondary Certificate (H.S.C.)</h3>
+              <h4 class="t-org">Sirumalar Girls Higher Secondary School</h4>
+              <div class="cgpa-pill"><i class="fa-solid fa-check"></i> 87.86% Percentage</div>
+              <p class="t-desc">
+                Strong foundation in Mathematics, Physics, Chemistry, and Computer Science.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline 4: S.S.L.C. -->
+          <div class="timeline-row timeline-right">
+            <div class="timeline-bullet-dot"></div>
+            <div class="timeline-content-card">
+              <div class="t-badge gold-t-badge"><i class="fa-solid fa-award"></i> 2020</div>
+              <h3 class="t-title">Secondary School Leaving Certificate (S.S.L.C.)</h3>
+              <h4 class="t-org">Sirumalar Girls Higher Secondary School</h4>
+              <div class="cgpa-pill"><i class="fa-solid fa-award"></i> 96.16% Percentage</div>
+              <p class="t-desc">
+                Graduated with top school distinction and honors.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- ACHIEVEMENTS & CERTIFICATIONS SECTION          -->
+    <!-- ============================================== -->
+    <section id="achievements" class="section achievements-section">
+      <div class="container">
+        <div class="section-title-box">
+          <h2 class="section-title-gradient">Honors &amp; Certifications</h2>
+          <p class="section-subtitle">National level accolades, competitive recognitions, and professional credentials.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="honors-grid-2col">
+          <!-- Key Honors -->
+          <div class="honor-col">
+            <h3 class="col-header"><i class="fa-solid fa-trophy"></i> Key Recognitions</h3>
+
+            <div class="honor-card">
+              <div class="honor-icon-box gold-icon"><i class="fa-solid fa-medal"></i></div>
+              <div class="honor-info">
+                <span class="mini-badge gold-badge">National Level &bull; Top 1%</span>
+                <h4>NPTEL Gold Medalist (90% Score)</h4>
+                <p class="honor-sub">Industry 4.0 &amp; Industrial IoT (Jan–Apr 2025)</p>
+                <p class="honor-desc">Awarded Certificate of Academic Excellence and Gold Medal for scoring 90% in elite national examination.</p>
+              </div>
+            </div>
+
+            <div class="honor-card">
+              <div class="honor-icon-box teal-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="honor-info">
+                <span class="mini-badge teal-badge">Department Honor</span>
+                <h4>Academic Best Outgoing Student</h4>
+                <p class="honor-sub">Sethu Institute of Technology (2022–2026 Batch)</p>
+                <p class="honor-desc">Bestowed highest academic award across the Department of Information Technology.</p>
+              </div>
+            </div>
+
+            <div class="honor-card">
+              <div class="honor-icon-box cyan-icon"><i class="fa-solid fa-file-powerpoint"></i></div>
+              <div class="honor-info">
+                <span class="mini-badge cyan-badge">Symposium Presentation</span>
+                <h4>Paper Presentation on Civil Law Chatbot</h4>
+                <p class="honor-sub">AISTHETICA 2K23, KLN College of Engineering &amp; Technology</p>
+                <p class="honor-desc">Presented research paper on AI-assisted legal search architectures.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Leadership -->
+          <div class="honor-col">
+            <h3 class="col-header"><i class="fa-solid fa-certificate"></i> Certifications &amp; Leadership</h3>
+
+            <div class="cert-card">
+              <div class="cert-icon-box"><i class="fa-solid fa-check"></i></div>
+              <div class="cert-info">
+                <h4>Java Foundation Certificate</h4>
+                <span class="cert-issuer">Infosys Springboard</span>
+                <p>Enterprise Java, object architecture, memory handling, and programming fundamentals.</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon-box"><i class="fa-solid fa-check"></i></div>
+              <div class="cert-info">
+                <h4>AI for Everyone: A Beginner's Guide</h4>
+                <span class="cert-issuer">RECCSAR PVT. LTD</span>
+                <p>Artificial intelligence foundations, machine learning pipelines, and applications.</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon-box"><i class="fa-solid fa-check"></i></div>
+              <div class="cert-info">
+                <h4>AI for Business Professionals</h4>
+                <span class="cert-issuer">HP FOUNDATION</span>
+                <p>Applied understanding of generative AI workflows and intelligent automation.</p>
+              </div>
+            </div>
+
+            <div class="extra-chips-list">
+              <div class="extra-chip"><i class="fa-solid fa-award"></i> 2nd Position in Emoji Tales (Infolite 2025)</div>
+              <div class="extra-chip"><i class="fa-solid fa-users"></i> Rotaract Club Member</div>
+              <div class="extra-chip"><i class="fa-solid fa-code"></i> Codequezt #23 (Naukri)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- CONTACT SECTION (Figma Style with Bluish-Green) -->
+    <!-- ============================================== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-title-box">
+          <h2 class="section-title-gradient">Let's Connect</h2>
+          <p class="section-subtitle">Ready to collaborate on full-stack web applications, Java systems, or SDE roles? Let's talk.</p>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="contact-2col-layout">
+          <!-- Left: Direct Message Form -->
+          <div class="contact-form-card">
+            <div class="form-header">
+              <i class="fa-regular fa-paper-plane form-header-icon"></i>
+              <h3>Send a Message</h3>
+            </div>
+
+            <form id="contact-form" class="figma-form">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Smith" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" name="email" placeholder="e.g. alex@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="e.g. Software Engineer Opportunity / Project Inquiry" />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="message" rows="4" placeholder="Hi Maanusree, I saw your portfolio and would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-gradient-teal btn-full">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Connect With Me Info & Avatar Orbit -->
+          <div class="contact-info-col">
+            <div class="contact-avatar-box">
+              <div class="mini-orbit-wrapper">
+                <img src="assets/profile.jpg" alt="Maanusree S" class="contact-avatar-img" onerror="this.style.display='none'; document.getElementById('contact-fallback-avatar').style.display='flex';" />
+                <div id="contact-fallback-avatar" class="contact-avatar-fallback" style="display:none;">MS</div>
+                <div class="mini-orbit-ring"></div>
+              </div>
+              <h4 class="contact-person-name">Maanusree S</h4>
+              <p class="contact-person-role">B.Tech Information Technology &bull; 9.37 CGPA</p>
+            </div>
+
+            <div class="contact-tiles-stack">
+              <div class="c-tile">
+                <div class="c-tile-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="c-tile-details">
+                  <span class="c-tile-label">Email Address</span>
+                  <a href="mailto:maanusree1105@gmail.com" class="c-tile-val">maanusree1105@gmail.com</a>
+                </div>
+                <button class="tile-copy-btn copy-action" data-copy="maanusree1105@gmail.com" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="c-tile">
+                <div class="c-tile-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="c-tile-details">
+                  <span class="c-tile-label">Phone Number</span>
+                  <a href="tel:+917418214150" class="c-tile-val">+91 74182 14150</a>
+                </div>
+                <button class="tile-copy-btn copy-action" data-copy="7418214150" title="Copy Phone Number">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="c-tile">
+                <div class="c-tile-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="c-tile-details">
+                  <span class="c-tile-label">LinkedIn Profile</span>
+                  <a href="https://www.linkedin.com/in/manusree-4305a4314" target="_blank" rel="noopener noreferrer" class="c-tile-val">in/manusree-4305a4314</a>
+                </div>
+                <a href="https://www.linkedin.com/in/manusree-4305a4314" target="_blank" rel="noopener noreferrer" class="tile-copy-btn" title="Open LinkedIn">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+
+              <div class="c-tile">
+                <div class="c-tile-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="c-tile-details">
+                  <span class="c-tile-label">GitHub Profile</span>
+                  <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="c-tile-val">github.com/Maanusree</a>
+                </div>
+                <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" class="tile-copy-btn" title="Open GitHub">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-location-note">
+              <i class="fa-solid fa-location-dot"></i> Based in Tamil Nadu, India &bull; Open to relocation &amp; remote engineering opportunities.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- FOOTER                                         -->
+  <!-- ============================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <div class="footer-brand">Maanusree S<span class="dot-accent">.</span></div>
+        <p class="footer-sub">B.Tech IT (9.37 CGPA) &bull; Sethu Institute of Technology</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/Maanusree" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/manusree-4305a4314" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:maanusree1105@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        <a href="tel:7418214150" title="Phone"><i class="fa-solid fa-phone"></i></a>
+      </div>
+
+      <div class="footer-copy">
+        <p>&copy; <span id="year">2026</span> Maanusree S. Engineering the future with code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- RESUME MODAL & PRINT VIEW                      -->
+  <!-- ============================================== -->
+  <div id="modal-resume" class="modal" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog">
+      <div class="modal-topbar">
+        <h3 id="resume-title"><i class="fa-regular fa-file-lines"></i> Maanusree S — Resume</h3>
+        <div class="topbar-actions">
+          <button class="btn btn-gradient-teal btn-sm" id="print-resume-btn">
+            <i class="fa-solid fa-print"></i> Print / Save PDF
+          </button>
+          <button class="modal-close" data-close-modal aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="resume-document" id="printable-resume">
+        <header class="resume-header">
+          <div class="resume-header-left">
+            <img src="assets/profile.jpg" alt="Maanusree S" class="resume-photo" onerror="this.style.display='none';" />
+            <div class="resume-title-box">
+              <h1 class="resume-name">MAANUSREE S</h1>
+              <p class="resume-subtitle">B.Tech Information Technology • Full-Stack Web &amp; Java Developer</p>
+            </div>
+          </div>
+          <div class="resume-contact-block">
+            <div><i class="fa-solid fa-phone"></i> +91 7418214150</div>
+            <div><i class="fa-solid fa-envelope"></i> maanusree1105@gmail.com</div>
+            <div><i class="fa-brands fa-linkedin"></i> linkedin.com/in/manusree-4305a4314</div>
+            <div><i class="fa-brands fa-github"></i> github.com/Maanusree</div>
+          </div>
+        </header>
+
+        <hr class="resume-hr" />
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">PERSONAL OBJECTIVE</h2>
+          <p class="resume-para">
+            To secure a challenging position in a progressive organization that will utilize my talents and provides me with an opportunity for personal and professional growth.
+          </p>
+        </section>
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">TECHNICAL SKILLS</h2>
+          <table class="resume-skills-tbl">
+            <tr>
+              <td><strong>Languages &amp; Backend:</strong></td>
+              <td>Java, Object-Oriented Programming (OOP), Spring Boot, REST APIs</td>
+            </tr>
+            <tr>
+              <td><strong>Web &amp; Frontend:</strong></td>
+              <td>Next.js, React, HTML5, CSS3, JavaScript, Tailwind CSS, Responsive Web Design</td>
+            </tr>
+            <tr>
+              <td><strong>Databases:</strong></td>
+              <td>MySQL, Relational Schema Design, SQL Queries</td>
+            </tr>
+            <tr>
+              <td><strong>Tools &amp; Platforms:</strong></td>
+              <td>Git, GitHub, Visual Studio Code, IntelliJ IDEA, Eclipse IDE, Postman, Vercel, Render</td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">EDUCATION</h2>
+          <table class="resume-data-tbl">
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>College / School</th>
+                <th>CGPA / Percentage</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>B.Tech. IT</strong> (upto 6th sem)</td>
+                <td>Sethu Institute of Technology</td>
+                <td><strong>9.37 CGPA</strong></td>
+                <td>2022 - 2026</td>
+              </tr>
+              <tr>
+                <td><strong>H.S.C.</strong></td>
+                <td>Sirumalar Girls Higher Secondary School</td>
+                <td>87.86%</td>
+                <td>2022</td>
+              </tr>
+              <tr>
+                <td><strong>S.S.L.C.</strong></td>
+                <td>Sirumalar Girls Higher Secondary School</td>
+                <td>96.16%</td>
+                <td>2020</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">PROJECTS</h2>
+          
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <strong>Support Ticket Management System</strong>
+              <span>Live: support-ticket-management-tau.vercel.app</span>
+            </div>
+            <ul class="resume-list">
+              <li>Engineered a full-stack ticket management system in Next.js and React with role-based access for Admins, Agents, and Customers.</li>
+              <li>Implemented ticket lifecycle tracking (Open, In Progress, Resolved), priority levels, SLA monitoring, and responsive dashboard UI.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <strong>InnoAssist AI Voice Assistant</strong>
+              <span>Live: innoassist-ai-voice.onrender.com</span>
+            </div>
+            <ul class="resume-list">
+              <li>Developed an interactive AI-powered voice assistant capable of speech recognition, intent parsing, and automated query answering.</li>
+              <li>Deployed containerized service on Render cloud with low-latency audio response streaming.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <strong>Chatbot for Civil Law</strong>
+              <span>April 2024 - March 2025</span>
+            </div>
+            <ul class="resume-list">
+              <li>Developed a web-based Civil Law Chatbot dynamically retrieving legal information using Google Custom Search API and Spring Boot REST backend.</li>
+              <li>Presented paper at National Level Symposium (AISTHETICA 2K23) at KLN College of Engineering &amp; Technology.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <strong>Responsive Webpage for E-Commerce</strong>
+              <span>Frontend Development</span>
+            </div>
+            <ul class="resume-list">
+              <li>Created a responsive e-commerce storefront with structured product listings, navigation menus, and media queries.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">INTERNSHIP EXPERIENCE</h2>
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <strong>CodeTech — Java Developer Intern</strong>
+              <span>Aug 2025 - Sep 2025</span>
+            </div>
+            <div class="resume-entry-sub">Personal Expense Tracker Application</div>
+            <ul class="resume-list">
+              <li>Developed a Java console application to record and manage daily income/expenses with spending categorization.</li>
+              <li>Applied OOP concepts (encapsulation, abstraction) and collections/arrays for modular calculations.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">ACHIEVEMENTS &amp; HONORS</h2>
+          <ul class="resume-list">
+            <li><strong>NPTEL Gold Medalist</strong> in Industry 4.0 &amp; Industrial IoT with <strong>90%</strong> (Jan–Apr 2025).</li>
+            <li>Certificate of <strong>Academic Best Outgoing Student</strong> (2022–2026), Department of IT, Sethu Institute of Technology.</li>
+            <li>Paper Presentation certificate at National Level Technical Symposium <strong>AISTHETICA 2K23</strong>.</li>
+          </ul>
+        </section>
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">CERTIFICATIONS &amp; ACTIVITIES</h2>
+          <ul class="resume-list">
+            <li><strong>Java Foundation Certificate</strong> from Infosys Springboard.</li>
+            <li><strong>AI for Everyone: A beginner's Guide</strong> (RECCSAR PVT. LTD) &amp; <strong>AI for Business Professionals</strong> (HP Foundation).</li>
+            <li>2nd Position in <strong>Emoji Tales</strong> (Infolite 2025) &bull; <strong>Rotaract Club Member</strong> &bull; <strong>Codequezt #23</strong> (Naukri).</li>
+          </ul>
+        </section>
+
+        <section class="resume-sect">
+          <h2 class="resume-sect-title">LANGUAGES &amp; HOBBIES</h2>
+          <p class="resume-para">
+            <strong>Languages:</strong> Tamil (Native), English (Fluent) &nbsp;|&nbsp; 
+            <strong>Hobbies:</strong> Art and Craft, Drawing, Watching Movies
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
