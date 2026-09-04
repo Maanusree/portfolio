@@ -167,13 +167,20 @@ function initProjectFilters() {
 }
 
 /* ==========================================================
-   4. Resume Modal & Print View Trigger
+   4. Resume Download & Modal Handler
    ========================================================== */
 function initResumeModal() {
+  const downloadBtn = document.getElementById('download-resume-btn');
   const openBtn = document.getElementById('open-resume-btn');
   const modal = document.getElementById('modal-resume');
   const closeBtns = document.querySelectorAll('[data-close-modal]');
   const printBtn = document.getElementById('print-resume-btn');
+
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      showToast('Downloading Maanusree\'s Resume (PDF)...', 'success');
+    });
+  }
 
   if (!modal) return;
 
