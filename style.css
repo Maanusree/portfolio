@@ -846,6 +846,168 @@ body {
   flex-wrap: wrap;
 }
 
+.card-badge-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid var(--border-teal-subtle);
+  color: var(--teal);
+}
+
+/* Workflow Step Box */
+.workflow-box {
+  background: rgba(3, 7, 18, 0.65);
+  border: 1px solid var(--border-teal-subtle);
+  border-left: 3px solid var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.wf-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.wf-flow {
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+/* ==============================================
+   WORK EXPERIENCE SECTION (Dedicated Cards)
+   ============================================== */
+.experience-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.exp-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-teal-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all var(--transition-smooth);
+}
+
+.exp-card:hover {
+  border-color: var(--border-teal-glow);
+  box-shadow: var(--glow-teal);
+  transform: translateY(-3px);
+}
+
+.exp-card.highlight-exp-card {
+  border-left: 4px solid var(--teal);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(11, 17, 32, 0.85) 100%);
+}
+
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-teal-subtle);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.exp-role-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exp-company-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-teal-glow);
+  border: 1.5px solid var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--teal);
+}
+
+.exp-job-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.exp-company-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.exp-period-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.exp-summary {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.exp-bullet-points {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.exp-bullet-points li {
+  line-height: 1.5;
+}
+
+.exp-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.exp-tech-pills span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid var(--border-teal-subtle);
+  color: var(--teal);
+}
+
 /* ==============================================
    TECH STACK SECTION (Figma Glowing Meters)
    ============================================== */
