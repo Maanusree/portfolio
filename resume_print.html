@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maanusree S — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 14mm 10mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #ffffff;
+      color: #1e293b;
+      font-size: 8.8pt;
+      line-height: 1.38;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .resume-page {
+      max-width: 100%;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-photo {
+      width: 64px;
+      height: 74px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .name {
+      font-size: 19pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f766e;
+      margin-top: 3px;
+    }
+
+    .contact-block {
+      text-align: right;
+      font-size: 8pt;
+      color: #475569;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .contact-block a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 7px;
+    }
+
+    .section-title {
+      font-size: 8.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #0f172a;
+      border-bottom: 1.2px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
+
+    /* Technical Skills */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+      font-size: 8.2pt;
+    }
+
+    .skill-row {
+      display: flex;
+    }
+
+    .skill-category {
+      width: 175px;
+      font-weight: 700;
+      color: #0f172a;
+      flex-shrink: 0;
+    }
+
+    .skill-items {
+      color: #334155;
+    }
+
+    /* Entries */
+    .entry {
+      margin-bottom: 5px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 8.6pt;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .entry-link {
+      font-size: 7.8pt;
+      font-family: 'JetBrains Mono', monospace;
+      color: #0f766e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .entry-date {
+      font-size: 7.8pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .entry-subtitle {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 1.5px;
+    }
+
+    .bullet-list {
+      padding-left: 14px;
+      font-size: 8.1pt;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+    }
+
+    .bullet-list li {
+      line-height: 1.35;
+    }
+
+    .bullet-list strong {
+      color: #0f172a;
+    }
+
+    /* Education Table */
+    .edu-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-top: 3px;
+    }
+
+    .edu-table th, .edu-table td {
+      border: 1px solid #cbd5e1;
+      padding: 3px 6px;
+      text-align: left;
+    }
+
+    .edu-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* Page Break */
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+      padding-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-page">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="assets/profile.jpg" alt="Maanusree S" class="header-photo">
+        <div>
+          <h1 class="name">MAANUSREE S</h1>
+          <p class="subtitle">AI Engineer / Software Engineer</p>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div><i class="fa-solid fa-phone"></i> +91 74182 14150</div>
+        <div><i class="fa-solid fa-envelope"></i> maanusree1105@gmail.com</div>
+        <div><i class="fa-brands fa-linkedin"></i> linkedin.com/in/maanusree-s-4305a4314</div>
+        <div><i class="fa-brands fa-github"></i> github.com/Maanusree</div>
+      </div>
+    </header>
+
+    <!-- Personal Objective -->
+    <section class="section">
+      <h2 class="section-title">Personal Objective</h2>
+      <p style="font-size: 8.2pt; color: #334155;">
+        To secure a challenging position in a progressive organization that will utilize my talents and provides me with an opportunity for personal and professional growth.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-category">Programming:</span>
+          <span class="skill-items">Java, JavaScript, Python</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Frontend:</span>
+          <span class="skill-items">HTML5, CSS3, React.js, Next.js, Tailwind CSS, Vite</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Backend:</span>
+          <span class="skill-items">Node.js, Express.js, FastAPI, REST APIs</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Databases:</span>
+          <span class="skill-items">SQL, PostgreSQL, Supabase</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">AI &amp; APIs:</span>
+          <span class="skill-items">Google Gemini API, OpenAI API, LLM Integration, Prompt Engineering</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Automation &amp; Scraping:</span>
+          <span class="skill-items">Playwright, Browser Automation, Web Scraping, DOM Data Extraction</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Auth &amp; Security:</span>
+          <span class="skill-items">JWT, Bcrypt, Role-Based Access Control (RBAC)</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Messaging &amp; Integrations:</span>
+          <span class="skill-items">WhatsApp Cloud API, Email APIs (Brevo, SendGrid), LinkedIn Automation</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">DevOps &amp; Tools:</span>
+          <span class="skill-items">Git, GitHub, Docker, Postman, Render, Vercel, Hostinger</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">VRM AI Technology &mdash; Junior AI Engineer</span>
+          <span class="entry-date">April 2026 &ndash; Present</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed and contributed to AI-powered business applications focused on automation and vendor relationship management.</li>
+          <li>Built and integrated backend APIs, database workflows, automation processes, and responsive frontend dashboards.</li>
+          <li>Worked with AI/API integrations, data processing, communication APIs, and cloud deployment.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">CodeTech &mdash; Java Developer Intern</span>
+          <span class="entry-date">August 2025 &ndash; September 2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed a Java-based console application to help users record and manage daily income and expenses.</li>
+          <li>Implemented features to categorize expenses such as food, travel, and shopping, and generated daily and monthly spending summaries.</li>
+          <li>Utilized arrays, loops, and conditional statements to process financial data and applied Object-Oriented Programming (OOP) principles.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project Works (Part 1) -->
+    <section class="section">
+      <h2 class="section-title">Project Works</h2>
+
+      <!-- Project 1: SalesAI -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">SalesAI &ndash; B2B Sales Outreach &amp; Automation Platform</span>
+          <span class="entry-date">Work Project | Junior AI Intern</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Built a multi-channel sales automation platform using React, Vite, Node.js, Express, PostgreSQL, and Prisma, enabling lead ingestion, campaign creation, and outreach management.</li>
+          <li>Implemented workflow: <em>Lead Upload &rarr; Data Processing &rarr; Campaign Creation &rarr; Personalized Email/WhatsApp/LinkedIn Outreach &rarr; Engagement Tracking &rarr; Automated Follow-ups</em>.</li>
+          <li>Integrated OpenAI, Brevo, SendGrid, WhatsApp Cloud API, BullMQ, Redis/IORedis, and Node-Cron for AI-assisted outreach, background processing, and scheduled campaigns.</li>
+          <li>Developed Excel/CSV bulk processing, click tracking, campaign analytics, API security, and production deployment using Docker/PM2 and Hostinger.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2: PRM VendorBridge -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">PRM &ndash; Vendor Management System (VendorBridge)</span>
+          <span class="entry-date">Work Project | Junior AI Intern</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed a B2B Vendor Management System using React, Vite, Node.js, Express, PostgreSQL, and Tailwind CSS for managing external staffing and consulting vendors.</li>
+          <li>Implemented workflow: <em>Vendor Onboarding &rarr; Document/Data Upload &rarr; Validation &amp; Deduplication &rarr; Tier Classification &rarr; Contract Tracking &rarr; Resource/Bench Management</em>.</li>
+          <li>Built JWT/Bcrypt authentication, vendor dashboards, tier-based workflows, and bulk spreadsheet processing using ExcelJS, XLSX, and Multer.</li>
+          <li>Implemented contract/document management and Bench-to-Billing workflows, with the application deployed on Hostinger.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PAGE 2 BREAK -->
+    <div class="page-break"></div>
+
+    <section class="section">
+      <h2 class="section-title">Project Works (Continued)</h2>
+
+      <!-- Project 3: AI Voice Agent -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">AI Voice Technical Support Agent</span>
+          <span class="entry-date">Personal Project | Practice</span>
+        </div>
+        <div class="entry-subtitle">GitHub: https://github.com/Maanusree/ai-voice-technical-support | Live on Render</div>
+        <ul class="bullet-list">
+          <li>Built an end-to-end AI voice support system using Python, FastAPI, JavaScript, Twilio Voice API, Web Speech API, and Edge-TTS for both browser-based and real telephone conversations.</li>
+          <li>Implemented workflow: <em>Customer Call &rarr; Speech-to-Text &rarr; Issue Detection &rarr; Troubleshooting Decision Tree/LLM &rarr; Text-to-Speech &rarr; Follow-up &rarr; Resolution or Human Escalation</em>.</li>
+          <li>Integrated Gemini 2.0 Flash, OpenAI GPT-4o-mini, Groq Llama 3.3, and deterministic offline troubleshooting logic across multiple technical-support scenarios.</li>
+          <li>Added Twilio telephony, English/Tamil voice interaction, conversation transcripts, safety-hazard detection, automatic ticket escalation, Web Audio/Canvas visualization, and Pytest testing; deployed on Render.</li>
+        </ul>
+      </div>
+
+      <!-- Project 4: Support Ticket System -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Support Ticket Management System</span>
+          <span class="entry-date">Personal Project | Practice</span>
+        </div>
+        <div class="entry-subtitle">GitHub: https://github.com/Maanusree/support-ticket-management | Live on Vercel</div>
+        <ul class="bullet-list">
+          <li>Developed a full-stack support platform using Next.js, React, Tailwind CSS, FastAPI, SQLAlchemy, PostgreSQL, JWT, and Bcrypt with separate Customer, Agent, and Administrator workflows.</li>
+          <li>Implemented workflow: <em>Ticket Creation &rarr; Assignment &rarr; In Progress &rarr; Resolution &rarr; Closure</em>, with controlled status transitions and mandatory resolution handling.</li>
+          <li>Implemented PostgreSQL row-level locking using SQLAlchemy <code>with_for_update()</code> to prevent multiple agents from claiming the same ticket simultaneously.</li>
+          <li>Added role-based access control, public/internal comments, audit activity tracking, automated Pytest testing, and cloud deployment with the frontend on Vercel.</li>
+        </ul>
+      </div>
+
+      <!-- Project 5: Chatbot for Civil Law -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Chatbot for Civil Law</span>
+          <span class="entry-date">April 2024 &ndash; March 2025</span>
+        </div>
+        <div class="entry-subtitle">GitHub: https://github.com/Maanusree/Chatbot-for-civil-law</div>
+        <ul class="bullet-list">
+          <li>Developed a web-based Civil Law Chatbot that dynamically retrieves legal information using the Google Custom Search API. Implemented the backend using Java and Spring Boot to process user queries through RESTful API endpoints.</li>
+          <li>Designed frontend chat interface using HTML5, CSS3, and JavaScript. The system processes user input, sends search requests to Google API, extracts relevant snippets from JSON responses, and displays concise legal explanations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <table class="edu-table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>College / School</th>
+            <th>CGPA / Percentage</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>B.Tech - IT</strong></td>
+            <td>Sethu Institute of Technology</td>
+            <td><strong>9.4 CGPA</strong></td>
+            <td>2022 &ndash; 2026</td>
+          </tr>
+          <tr>
+            <td><strong>H.S.C.</strong></td>
+            <td>Sirumalar Girls Higher Secondary School</td>
+            <td><strong>87.86%</strong></td>
+            <td>2021 &ndash; 2022</td>
+          </tr>
+          <tr>
+            <td><strong>S.S.L.C.</strong></td>
+            <td>Sirumalar Girls Higher Secondary School</td>
+            <td><strong>96.16%</strong></td>
+            <td>2019 &ndash; 2020</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Honors & Certifications -->
+    <section class="section">
+      <h2 class="section-title">Achievements and Certifications</h2>
+      <ul class="bullet-list">
+        <li><strong>NPTEL Gold Medalist</strong> in Industry 4.0 &amp; Industrial IoT, with <strong>90%</strong> (Jan&ndash;Apr 2025).</li>
+        <li>Awarded Certificate of <strong>Academic Best Outgoing Student</strong> of IT department (2022&ndash;2026) with CGPA of <strong>9.4</strong>, Sethu Institute of Technology.</li>
+        <li>National level symposium participation certificate for paper presentation on chatbot for civil law at <strong>AISTHETICA 2K23</strong>, KLN College of Engineering and Technology.</li>
+        <li><strong>Rotaract Club Member</strong> &mdash; Participated in youth engagement initiatives and leadership development programs.</li>
+        <li>Certificate of Appreciation for participating in <strong>Codequezt #23</strong> hosted by Naukri.</li>
+      </ul>
+    </section>
+
+    <!-- Languages Known & Hobbies -->
+    <section class="section">
+      <h2 class="section-title">Languages Known &amp; Hobbies</h2>
+      <p style="font-size: 8.2pt; color: #334155;">
+        <strong>Languages Known:</strong> Tamil, English &nbsp;|&nbsp; 
+        <strong>Hobbies:</strong> Doing Craftwork, Drawing, Watching Movies
+      </p>
+    </section>
+
+    <!-- Declaration -->
+    <section class="section" style="margin-top: 8px; border-top: 1px solid #cbd5e1; padding-top: 4px;">
+      <p style="font-size: 7.8pt; color: #64748b; font-style: italic;">
+        I hereby declare that all the details given above are correct and true to the best of my knowledge.
+      </p>
+      <div style="text-align: right; margin-top: 3px; font-weight: 700; font-size: 8.5pt; color: #0f172a;">
+        MAANUSREE S
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
