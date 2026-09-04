@@ -1,7 +1,7 @@
 # MAANUSREE S
 **AI Engineer / Software Engineer**  
 Phone: +91 7418214150 | Email: maanusree1105@gmail.com  
-LinkedIn: [linkedin.com/in/manusree-4305a4314](https://www.linkedin.com/in/manusree-4305a4314) | GitHub: [github.com/Maanusree](https://github.com/Maanusree)  
+LinkedIn: [linkedin.com/in/maanusree-s-4305a4314](https://www.linkedin.com/in/maanusree-s-4305a4314) | GitHub: [github.com/Maanusree](https://github.com/Maanusree)  
 Portfolio: [support-ticket-management-tau.vercel.app](https://support-ticket-management-tau.vercel.app/)
 
 ---

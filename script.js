@@ -293,6 +293,7 @@ function initContactForm() {
     const payload = {
       name: name,
       email: email,
+      _replyto: email,
       _subject: `New Portfolio Message from ${name}: ${subject}`,
       subject: subject,
       message: message,
