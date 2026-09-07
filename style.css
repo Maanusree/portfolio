@@ -2134,3 +2134,124 @@ body {
   }
 }
 
+/* ==========================================================================
+   Country Selection Resume Modal Styles
+   ========================================================================== */
+/* ==========================================================================
+   Clean Country Resume Download Modal
+   ========================================================================== */
+.clean-country-dialog {
+  width: 90%;
+  max-width: 380px;
+  background: #0b1120;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(45, 212, 191, 0.12);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.clean-country-dialog .modal-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.clean-country-dialog .modal-topbar h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clean-country-dialog .modal-topbar h3 i {
+  color: var(--teal);
+  font-size: 1.05rem;
+}
+
+.country-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.country-form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.country-select-box {
+  width: 100%;
+}
+
+.country-select-box select {
+  width: 100%;
+  background: #030712;
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 10px;
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.country-select-box select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
+}
+
+.country-format-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.country-format-hint i {
+  color: var(--teal);
+  font-size: 0.8rem;
+}
+
+.country-download-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.25);
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.country-download-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.country-download-btn:active {
+  transform: translateY(0);
+}
+
+

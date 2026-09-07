@@ -2,7 +2,8 @@
 **AI Engineer / Software Engineer**  
 Phone: +91 7418214150 | Email: maanusree1105@gmail.com  
 LinkedIn: [linkedin.com/in/maanusree-s-4305a4314](https://www.linkedin.com/in/maanusree-s-4305a4314) | GitHub: [github.com/Maanusree](https://github.com/Maanusree)  
-Portfolio: [support-ticket-management-tau.vercel.app](https://support-ticket-management-tau.vercel.app/)
+Portfolio: [portfolio-bha2.onrender.com](https://portfolio-bha2.onrender.com/)  
+Location: 📍 Madurai / Bangalore | Open to Relocate
 
 ---
 
@@ -48,8 +49,10 @@ To secure a challenging position in a progressive organization that will utilize
 
 ### **PRM – Vendor Management System (VendorBridge)** *(Work Project | Junior AI Intern)*
 - Developed a B2B Vendor Management System using React, Vite, Node.js, Express, PostgreSQL, and Tailwind CSS for managing external staffing and consulting vendors.
-- Implemented the workflow: `Vendor Onboarding → Document/Data Upload → Validation & Deduplication → Tier Classification → Contract Tracking → Resource/Bench Management`.
-- Built JWT/Bcrypt authentication, vendor dashboards, tier-based workflows, and bulk spreadsheet processing using ExcelJS, XLSX, and Multer.
+- Integrated Excel/ExcelJS/XLSX-based vendor data processing and Microsoft email account integration for company colleagues involved in vendor outreach.
+- Enabled internal users to manage vendor communication and automatically notify relevant colleagues about upcoming vendor meetings and outreach activities through email.
+- Integrated Gemini API as an internal AI assistant to generate personalized vendor email content based on vendor details, communication context, and upcoming meetings.
+- Implemented JWT/Bcrypt authentication, vendor dashboards, tier-based workflows, bulk spreadsheet processing with Multer, and vendor communication management.
 - Implemented contract/document management and Bench-to-Billing workflows, with the application deployed on Hostinger.
 
 ### **AI Voice Technical Support Agent** *(Personal Project | Practice)* | [GitHub](https://github.com/Maanusree/ai-voice-technical-support)

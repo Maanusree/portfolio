@@ -167,42 +167,109 @@ function initProjectFilters() {
 }
 
 /* ==========================================================
-   4. Resume Download & Modal Handler
+   4. Resume Download & Country Selection Modal Handler
    ========================================================== */
 function initResumeModal() {
-  const downloadBtn = document.getElementById('download-resume-btn');
+  const downloadNavBtn = document.getElementById('download-resume-btn');
+  const downloadModalBtn = document.getElementById('download-modal-btn');
   const openBtn = document.getElementById('open-resume-btn');
-  const modal = document.getElementById('modal-resume');
-  const closeBtns = document.querySelectorAll('[data-close-modal]');
+  const resumeModal = document.getElementById('modal-resume');
+  const countryModal = document.getElementById('modal-country-download');
+  const resumeCloseBtns = document.querySelectorAll('[data-close-modal]');
+  const countryCloseBtns = document.querySelectorAll('[data-close-country-modal]');
   const printBtn = document.getElementById('print-resume-btn');
 
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', () => {
-      showToast('Downloading Maanusree\'s Resume (PDF)...', 'success');
-    });
-  }
+  // Country selection elements
+  const cardNoPhoto = document.getElementById('card-no-photo');
+  const cardWithPhoto = document.getElementById('card-with-photo');
+  const countryDropdown = document.getElementById('country-dropdown');
+  const countryGoBtn = document.getElementById('btn-country-go');
 
-  if (!modal) return;
-
-  function openModal() {
-    modal.classList.add('active');
+  function openCountryModal(e) {
+    if (e) e.preventDefault();
+    if (!countryModal) return;
+    countryModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeModal() {
-    modal.classList.remove('active');
+  function closeCountryModal() {
+    if (!countryModal) return;
+    countryModal.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  if (openBtn) openBtn.addEventListener('click', openModal);
+  function openResumeModal() {
+    if (!resumeModal) return;
+    resumeModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
-  closeBtns.forEach((btn) => {
-    btn.addEventListener('click', closeModal);
-  });
+  function closeResumeModal() {
+    if (!resumeModal) return;
+    resumeModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Intercept resume download buttons to prompt for country
+  if (downloadNavBtn) {
+    downloadNavBtn.addEventListener('click', openCountryModal);
+  }
+
+  if (downloadModalBtn) {
+    downloadModalBtn.addEventListener('click', openCountryModal);
+  }
+
+  if (openBtn) {
+    openBtn.addEventListener('click', openResumeModal);
+  }
+
+  resumeCloseBtns.forEach((btn) => btn.addEventListener('click', closeResumeModal));
+  countryCloseBtns.forEach((btn) => btn.addEventListener('click', closeCountryModal));
+
+  // Countries that use no-photo ATS standard
+  const noPhotoCountries = ['us', 'uk', 'ca', 'au', 'nz', 'ie'];
+  const formatHintText = document.getElementById('country-format-text');
+
+  function updateFormatHint() {
+    if (!countryDropdown || !formatHintText) return;
+    const val = countryDropdown.value.toLowerCase();
+    if (noPhotoCountries.includes(val)) {
+      formatHintText.textContent = 'ATS format (without photo)';
+    } else {
+      formatHintText.textContent = 'Standard format (with photo)';
+    }
+  }
+
+  if (countryDropdown) {
+    countryDropdown.addEventListener('change', updateFormatHint);
+  }
+
+  if (countryGoBtn && countryDropdown) {
+    countryGoBtn.addEventListener('click', () => {
+      const val = countryDropdown.value.toLowerCase();
+      const isNoPhoto = noPhotoCountries.includes(val);
+      const fileName = isNoPhoto ? 'Maanusree_S_Resume_No_Photo.pdf' : 'Maanusree_S_Resume.pdf';
+      const countryText = countryDropdown.options[countryDropdown.selectedIndex].text;
+
+      const link = document.createElement('a');
+      link.href = `assets/${fileName}`;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast(`Downloading ${isNoPhoto ? 'ATS Resume (No Photo)' : 'Standard Resume (With Photo)'} for ${countryText}...`, 'success');
+      setTimeout(closeCountryModal, 350);
+    });
+  }
 
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
+    if (e.key === 'Escape') {
+      if (countryModal && countryModal.classList.contains('active')) {
+        closeCountryModal();
+      } else if (resumeModal && resumeModal.classList.contains('active')) {
+        closeResumeModal();
+      }
     }
   });
 
