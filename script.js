@@ -244,24 +244,6 @@ function initResumeModal() {
     countryDropdown.addEventListener('change', updateFormatHint);
   }
 
-  if (countryGoBtn && countryDropdown) {
-    countryGoBtn.addEventListener('click', () => {
-      const val = countryDropdown.value.toLowerCase();
-      const isNoPhoto = noPhotoCountries.includes(val);
-      const fileName = isNoPhoto ? 'Maanusree_S_Resume_No_Photo.pdf' : 'Maanusree_S_Resume.pdf';
-      const countryText = countryDropdown.options[countryDropdown.selectedIndex].text;
-
-      const link = document.createElement('a');
-      link.href = `assets/${fileName}`;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      showToast(`Downloading ${isNoPhoto ? 'ATS Resume (No Photo)' : 'Standard Resume (With Photo)'} for ${countryText}...`, 'success');
-      setTimeout(closeCountryModal, 350);
-    });
-  }
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {

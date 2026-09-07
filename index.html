@@ -1370,7 +1370,12 @@
         hint.textContent = 'Standard format (with photo)';
       }
     }
-    function executeCountryDownload() {
+    var isDownloadingResume = false;
+    function executeCountryDownload(e) {
+      if (e) e.preventDefault();
+      if (isDownloadingResume) return;
+      isDownloadingResume = true;
+
       var dropdown = document.getElementById('country-dropdown');
       var val = dropdown ? dropdown.value.toLowerCase() : 'in';
       var noPhotoList = ['us', 'uk', 'ca', 'au'];
@@ -1389,11 +1394,15 @@
         showToast('Downloading ' + (isNoPhoto ? 'ATS Resume (No Photo)' : 'Standard Resume (With Photo)') + (countryName ? ' for ' + countryName : '') + '...', 'success');
       }
       closeCountryResumeModal();
+
+      setTimeout(function() {
+        isDownloadingResume = false;
+      }, 1200);
     }
     window.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeCountryResumeModal();
     });
   </script>
-  <script src="script.js?v=20260905_v4"></script>
+  <script src="script.js?v=20260907_v1"></script>
 </body>
 </html>
