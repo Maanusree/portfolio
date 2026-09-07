@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260907_v2" />
 </head>
 <body class="dark-theme">
 
@@ -1093,9 +1093,9 @@
           <span id="country-format-text">Standard format (with photo)</span>
         </div>
 
-        <button id="btn-country-go" class="country-download-btn" type="button" onclick="executeCountryDownload()">
+        <a id="btn-country-go" class="country-download-btn" href="assets/Maanusree_S_Resume.pdf" download="Maanusree_S_Resume.pdf" onclick="handleCountryDownloadClick(event)">
           <i class="fa-solid fa-download"></i> Download PDF
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -1360,49 +1360,41 @@
     }
     function onCountrySelectionChange() {
       var dropdown = document.getElementById('country-dropdown');
+      var btn = document.getElementById('btn-country-go');
       var hint = document.getElementById('country-format-text');
-      if (!dropdown || !hint) return;
+      if (!dropdown) return;
       var val = dropdown.value.toLowerCase();
-      var noPhotoList = ['us', 'uk', 'ca', 'au'];
-      if (noPhotoList.indexOf(val) !== -1) {
-        hint.textContent = 'ATS format (without photo)';
-      } else {
-        hint.textContent = 'Standard format (with photo)';
-      }
-    }
-    var isDownloadingResume = false;
-    function executeCountryDownload(e) {
-      if (e) e.preventDefault();
-      if (isDownloadingResume) return;
-      isDownloadingResume = true;
-
-      var dropdown = document.getElementById('country-dropdown');
-      var val = dropdown ? dropdown.value.toLowerCase() : 'in';
-      var noPhotoList = ['us', 'uk', 'ca', 'au'];
+      var noPhotoList = ['us', 'uk', 'ca', 'au', 'nz', 'ie'];
       var isNoPhoto = noPhotoList.indexOf(val) !== -1;
       var fileName = isNoPhoto ? 'Maanusree_S_Resume_No_Photo.pdf' : 'Maanusree_S_Resume.pdf';
 
-      var link = document.createElement('a');
-      link.href = 'assets/' + fileName;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      if (btn) {
+        btn.href = 'assets/' + fileName;
+        btn.setAttribute('download', fileName);
+      }
+      if (hint) {
+        hint.textContent = isNoPhoto ? 'ATS format (without photo)' : 'Standard format (with photo)';
+      }
+    }
+    function handleCountryDownloadClick(e) {
+      if (e && e.stopPropagation) {
+        e.stopPropagation();
+      }
+      var dropdown = document.getElementById('country-dropdown');
+      var val = dropdown ? dropdown.value.toLowerCase() : 'in';
+      var noPhotoList = ['us', 'uk', 'ca', 'au', 'nz', 'ie'];
+      var isNoPhoto = noPhotoList.indexOf(val) !== -1;
+      var countryName = (dropdown && dropdown.selectedIndex >= 0) ? dropdown.options[dropdown.selectedIndex].text : '';
 
       if (typeof showToast === 'function') {
-        var countryName = dropdown ? dropdown.options[dropdown.selectedIndex].text : '';
         showToast('Downloading ' + (isNoPhoto ? 'ATS Resume (No Photo)' : 'Standard Resume (With Photo)') + (countryName ? ' for ' + countryName : '') + '...', 'success');
       }
-      closeCountryResumeModal();
-
-      setTimeout(function() {
-        isDownloadingResume = false;
-      }, 1200);
+      setTimeout(closeCountryResumeModal, 350);
     }
     window.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeCountryResumeModal();
     });
   </script>
-  <script src="script.js?v=20260907_v1"></script>
+  <script src="script.js?v=20260907_v2"></script>
 </body>
 </html>

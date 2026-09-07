@@ -231,12 +231,16 @@ function initResumeModal() {
   const formatHintText = document.getElementById('country-format-text');
 
   function updateFormatHint() {
-    if (!countryDropdown || !formatHintText) return;
+    if (!countryDropdown) return;
     const val = countryDropdown.value.toLowerCase();
-    if (noPhotoCountries.includes(val)) {
-      formatHintText.textContent = 'ATS format (without photo)';
-    } else {
-      formatHintText.textContent = 'Standard format (with photo)';
+    const isNoPhoto = noPhotoCountries.includes(val);
+    const fileName = isNoPhoto ? 'Maanusree_S_Resume_No_Photo.pdf' : 'Maanusree_S_Resume.pdf';
+    if (formatHintText) {
+      formatHintText.textContent = isNoPhoto ? 'ATS format (without photo)' : 'Standard format (with photo)';
+    }
+    if (countryGoBtn) {
+      countryGoBtn.href = `assets/${fileName}`;
+      countryGoBtn.setAttribute('download', fileName);
     }
   }
 
